@@ -1,5 +1,11 @@
-import express from 'express';
+const express = require("express");
+const { signup } = require ('../controllers/auth.controller.js');
 
 const router = express.Router();
 
-router.post("/signup")
+router.post("/signup", signup);
+// router.post("/signin", signin);
+// router.post('/google', google);
+// router.get('/signout', signOut)
+
+module.exports = router;

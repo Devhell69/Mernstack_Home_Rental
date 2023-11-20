@@ -1,10 +1,11 @@
-import express from "express";
-import mongoose from "mongoose";
-import cookieParser from "cookie-parser";
-import path from "path";
-import morgan from "morgan";
-import dotenv from "dotenv";
-import userRouter from "./routes/user.route.js"
+const express = require ("express");
+const mongoose = require ("mongoose");
+const cookieParser = require ("cookie-parser");
+const path = require ("path");
+const morgan = require ("morgan");
+const dotenv = require ("dotenv");
+const userRouter = require ("./routes/user.route.js")
+const authRouter = require ("./routes/auth.route.js")
 dotenv.config();
 
 mongoose
@@ -16,7 +17,7 @@ mongoose
     console.log(err);
   });
 
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 const app = express();
 app.use(morgan("dev"));
 app.use(express.json());
@@ -28,3 +29,4 @@ app.listen(port, () => {
 });
 
 app.use("/api/user", userRouter)
+app.use("/api/auth", authRouter)

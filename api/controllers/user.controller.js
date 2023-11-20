@@ -1,18 +1,18 @@
-import bcryptjs from "bcryptjs";
-import User from "../models/user.model.js";
-import { errorHandler } from "../utils/error.js";
-import Listing from "../models/listing.model.js";
+const bcrypt = require('bcryptjs');
+const User = require ("../models/user.model.js");
+const { errorHandler } = require ("../utils/error.js");
+const Listing = require ("../models/listing.model.js");
 
-export const test = (req, res) => {
+exports.test = (req, res) => {
   res.json({
     message: "Api route is working!",
   });
 };
 
-export const updateUser = async (req, res, next) => {};
+exports.updateUser = async (req, res, next) => {};
 
-export const deleteUser = async (req, res, next) => {};
+exports.deleteUser = async (req, res, next) => {};
 
-export const getUserListings = async (req, res, next) => {};
+exports.getUserListings = async (req, res, next) => {};
 
-export const getUser = async (req, res, next) => {};
+exports.getUser = async (req, res, next) => {};
