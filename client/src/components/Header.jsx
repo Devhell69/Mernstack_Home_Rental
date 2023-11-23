@@ -9,7 +9,7 @@ export default function Header() {
   const navigate = useNavigate();
 
   return (
-    <header className="bg-slate-200 shadow-md">
+    <header className="bg-blue-300 shadow-md">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
         <Link to="/">
           <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
