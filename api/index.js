@@ -1,11 +1,12 @@
 const express = require ("express");
 const mongoose = require ("mongoose");
-const cookieParser = require ("cookie-parser");
-const path = require ("path");
-const morgan = require ("morgan");
 const dotenv = require ("dotenv");
 const userRouter = require ("./routes/user.route.js")
 const authRouter = require ("./routes/auth.route.js")
+const listingRouter = require ("./routes/listing.route.js")
+const cookieParser = require ("cookie-parser");
+const morgan = require ("morgan");
+const path = require ("path");
 dotenv.config();
 
 mongoose
@@ -28,8 +29,9 @@ app.listen(port, () => {
   console.log("Server is running on port " + port);
 });
 
-app.use("/api/user", userRouter)
-app.use("/api/auth", authRouter)
+app.use('/api/user', userRouter);
+app.use('/api/auth', authRouter);
+app.use('/api/listing', listingRouter);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
